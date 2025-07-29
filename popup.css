@@ -1,0 +1,142 @@
+body {
+  font-family: sans-serif;
+  width: 350px;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.tab-link {
+  background-color: #f1f1f1;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+  border-radius: 3px 3px 0 0;
+  margin-right: 2px;
+}
+
+.tab-link:last-child {
+  margin-right: 0;
+}
+
+.tab-link.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input[type="text"],
+textarea {
+  width: calc(100% - 22px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+textarea {
+  height: 60px;
+  resize: vertical;
+}
+
+button,
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#deleteProfile,
+#clearPageCookies {
+  background-color: #f44336;
+}
+
+#saveProfile,
+#saveFromString,
+#saveEditedProfile {
+  background-color: #4CAF50;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+#cookie-list {
+  margin-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.cookie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.cookie-item:last-child {
+  border-bottom: none;
+}
+
+.delete-cookie {
+    background-color: #f44336;
+    width: auto;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}

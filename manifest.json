@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie 管理",
+  "version": "1.0",
+  "description": "輕鬆管理、儲存和切換多組 Cookie 設定檔。",
+  "permissions": [
+    "storage",
+    "cookies",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "incognito": "split"
+}
