@@ -1,14 +1,14 @@
 // js/profiles.test.js
 
-jest.mock('./ui.js', () => ({
+jest.mock('../js/ui.js', () => ({
   renderCookieList: jest.fn(),
   updateLoadedProfileDisplay: jest.fn(),
   loadProfilesUI: jest.fn(),
 }));
-jest.mock('./editor.js', () => ({
+jest.mock('../js/editor.js', () => ({
   applyToPage: jest.fn(() => Promise.resolve(true)),
 }));
-jest.mock('./state.js', () => ({
+jest.mock('../js/state.js', () => ({
   dom: {
     profilesSelect: { value: '' },
     profileNameInput: { value: '' },
@@ -26,10 +26,10 @@ const {
   saveEditedProfile,
   PROFILE_PREFIX,
   PROFILE_LIST_KEY
-} = require('./profiles.js');
-const { dom, state } = require('./state.js');
-const { applyToPage } = require('./editor.js');
-const { loadProfilesUI, updateLoadedProfileDisplay, renderCookieList } = require('./ui.js');
+} = require('../js/profiles.js');
+const { dom, state } = require('../js/state.js');
+const { applyToPage } = require('../js/editor.js');
+const { loadProfilesUI, updateLoadedProfileDisplay, renderCookieList } = require('../js/ui.js');
 
 describe('Profiles Tests', () => {
 

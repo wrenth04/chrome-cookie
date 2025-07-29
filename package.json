@@ -13,7 +13,10 @@
     "setupFilesAfterEnv": [
       "./jest.setup.js"
     ],
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.28.0",

@@ -2,11 +2,11 @@
 
 // Mock dependencies from other modules.
 // We only need to mock the functions that are actually called by the functions we're testing.
-jest.mock('./ui.js', () => ({
+jest.mock('../js/ui.js', () => ({
   loadProfilesUI: jest.fn(),
   renderCookieList: jest.fn(),
 }));
-jest.mock('./state.js', () => ({
+jest.mock('../js/state.js', () => ({
   dom: {
     importFileInput: { value: '' },
   },
@@ -22,9 +22,9 @@ const {
   clearPageCookies,
   PROFILE_PREFIX,
   PROFILE_LIST_KEY
-} = require('./tools.js');
-const { state } = require('./state.js');
-const { loadProfilesUI, renderCookieList } = require('./ui.js');
+} = require('../js/tools.js');
+const { state } = require('../js/state.js');
+const { loadProfilesUI, renderCookieList } = require('../js/ui.js');
 
 
 describe('Tools Tests', () => {

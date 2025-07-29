@@ -1,11 +1,11 @@
 // js/editor.test.js
 
-jest.mock('./ui.js', () => ({
+jest.mock('../js/ui.js', () => ({
   renderCookieList: jest.fn(),
   updateLoadedProfileDisplay: jest.fn(),
   loadProfilesUI: jest.fn(),
 }));
-jest.mock('./state.js', () => ({
+jest.mock('../js/state.js', () => ({
   dom: {
     newProfileNameInput: { value: '' },
     cookieStringInput: { value: '' },
@@ -23,9 +23,9 @@ const {
   deleteSingleCookie,
   PROFILE_PREFIX,
   PROFILE_LIST_KEY
-} = require('./editor.js');
-const { dom, state } = require('./state.js');
-const { loadProfilesUI, renderCookieList, updateLoadedProfileDisplay } = require('./ui.js');
+} = require('../js/editor.js');
+const { dom, state } = require('../js/state.js');
+const { loadProfilesUI, renderCookieList, updateLoadedProfileDisplay } = require('../js/ui.js');
 
 describe('Editor Tests', () => {
 
