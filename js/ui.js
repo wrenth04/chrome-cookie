@@ -1,6 +1,10 @@
 // js/ui.js
 /**
  * @file 管理所有與 UI 渲染相關的函數。
+ * @description
+ *      此檔案集中處理所有直接操作 DOM 的 UI 更新。
+ *      它根據應用程式的狀態 (`state.js`) 來渲染介面，
+ *      並從 `chrome.storage.sync` 中讀取 `profile_list` 來動態產生設定檔列表。
  */
 
 import { dom, state } from './state.js';
@@ -47,21 +51,21 @@ export const updateLoadedProfileDisplay = () => {
 };
 
 /**
- * 根據從存儲中讀取的設定檔，渲染匯出工具中的設定檔列表。
- * @param {object} profiles - 從 chrome.storage.local 讀取的設定檔物件。
+ * 根據設定檔名稱列表，渲染匯出工具中的設定檔複選框列表。
+ * @param {string[]} profileNames - 從 `profile_list` 讀取的設定檔名稱陣列。
  */
-export const renderExportList = (profiles) => {
+export const renderExportList = (profileNames) => {
   dom.exportProfilesListDiv.innerHTML = '';
   dom.exportSelectAll.checked = false;
   dom.exportSelectAll.indeterminate = false;
-  const hasProfiles = Object.keys(profiles).length > 0;
+  const hasProfiles = profileNames.length > 0;
   dom.exportSelectAllContainer.style.display = hasProfiles ? 'block' : 'none';
 
   if (!hasProfiles) {
     dom.exportProfilesListDiv.innerHTML = '<p><em>沒有任何設定檔可匯出。</em></p>';
     return;
   }
-  for (const name in profiles) {
+  for (const name of profileNames) {
     const checkboxContainer = document.createElement('div');
     checkboxContainer.className = 'checkbox-container';
     checkboxContainer.innerHTML = `
@@ -73,27 +77,28 @@ export const renderExportList = (profiles) => {
 };
 
 /**
- * 從 chrome.storage 載入所有設定檔，並更新設定檔管理的下拉選單和匯出工具的列表。
+ * 從 `chrome.storage.sync` 載入 `profile_list`，
+ * 並更新設定檔管理的下拉選單和匯出工具的列表。
  */
 export const loadProfilesUI = () => {
-  chrome.storage.local.get(['cookieProfiles'], (result) => {
-    const profiles = result.cookieProfiles || {};
+  chrome.storage.sync.get(['profile_list'], (result) => {
+    const profileNames = result.profile_list || [];
     const selectedValue = dom.profilesSelect.value;
     
     // 重新填充設定檔下拉選單
     dom.profilesSelect.innerHTML = '<option value="" disabled selected>選擇一個設定檔</option>';
-    for (const name in profiles) {
+    for (const name of profileNames) {
       const option = document.createElement('option');
       option.value = name;
       option.textContent = name;
       dom.profilesSelect.appendChild(option);
     }
     // 如果之前有選中的值且該值仍然存在，則恢復選中狀態
-    if (selectedValue && profiles[selectedValue]) {
+    if (selectedValue && profileNames.includes(selectedValue)) {
       dom.profilesSelect.value = selectedValue;
     }
 
     // 重新渲染匯出列表
-    renderExportList(profiles);
+    renderExportList(profileNames);
   });
 };

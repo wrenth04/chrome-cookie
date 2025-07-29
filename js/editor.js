@@ -1,10 +1,17 @@
 // js/editor.js
 /**
  * @file 編輯器相關功能，包含將 Cookie 應用至頁面、複製 Cookie 字串、從字串儲存設定檔等。
+ * @description
+ *      此檔案主要處理與 Cookie 編輯區互動的功能。
+ *      - `applyToPage`: 將編輯區的 Cookie 應用到當前網頁。
+ *      - `saveFromString`: 解析 Cookie 字串並儲存為新的設定檔，此過程會與新的拆分儲存結構互動。
  */
 
 import { dom, state } from './state.js';
 import { renderCookieList, updateLoadedProfileDisplay, loadProfilesUI } from './ui.js';
+
+const PROFILE_PREFIX = 'profile_';
+const PROFILE_LIST_KEY = 'profile_list';
 
 /**
  * 將編輯區的 Cookie 應用到當前的網頁。
@@ -12,7 +19,6 @@ import { renderCookieList, updateLoadedProfileDisplay, loadProfilesUI } from './
  * @returns {Promise<boolean>} - 回傳操作是否成功。
  */
 export async function applyToPage(showSuccessAlert = true) {
-  // 檢查是否有一個有效的、使用 http/https 協議的活動分頁
   if (!state.activeTab || !state.activeTab.url || !state.activeTab.url.startsWith('http')) {
     alert('請在一個有效的網頁上套用 Cookie。');
     return false;
@@ -22,13 +28,11 @@ export async function applyToPage(showSuccessAlert = true) {
   const storeId = cookieStoreId;
   const hostname = new URL(url).hostname;
 
-  // 移除當前頁面的所有現有 Cookie
   const existingCookies = await chrome.cookies.getAll({ url, storeId });
   for (const cookie of existingCookies) {
     await chrome.cookies.remove({ url, name: cookie.name, storeId });
   }
 
-  // 將編輯區儲存的 Cookie 逐一設定到當前頁面
   for (const savedCookie of state.currentCookies) {
     const newCookie = {
       url: url,
@@ -39,7 +43,6 @@ export async function applyToPage(showSuccessAlert = true) {
       domain: hostname, 
     };
 
-    // 處理可選的 Cookie 屬性
     if (savedCookie.secure) newCookie.secure = savedCookie.secure;
     if (savedCookie.httpOnly) newCookie.httpOnly = savedCookie.httpOnly;
     if (savedCookie.sameSite) newCookie.sameSite = savedCookie.sameSite;
@@ -47,7 +50,6 @@ export async function applyToPage(showSuccessAlert = true) {
       newCookie.expirationDate = savedCookie.expirationDate;
     }
 
-    // 嘗試設定 Cookie，如果因為 domain 問題失敗，則移除 domain 後重試
     try {
       await chrome.cookies.set(newCookie);
     } catch (e) {
@@ -89,6 +91,7 @@ export function copyCookieString() {
 
 /**
  * 從輸入的字串建立並儲存一個新的 Cookie 設定檔。
+ * 此函數會建立一個新的 `profile_{profileName}` 項目並更新 `profile_list`。
  */
 export function saveFromString() {
   const name = dom.newProfileNameInput.value.trim();
@@ -101,7 +104,6 @@ export function saveFromString() {
     alert('請貼上 Cookie 字串。');
     return;
   }
-  // 解析 Cookie 字串
   const cookies = cookieString.split(';').map(p => {
     const parts = p.trim().split('=');
     if (parts.length === 2) return { name: parts[0].trim(), value: parts[1].trim() };
@@ -113,15 +115,22 @@ export function saveFromString() {
     return;
   }
 
-  // 儲存到 chrome.storage
-  chrome.storage.local.get(['cookieProfiles'], (result) => {
-    const profiles = result.cookieProfiles || {};
-    if (profiles[name]) {
+  const profileKey = `${PROFILE_PREFIX}${name}`;
+  const dataToSave = { [profileKey]: cookies };
+
+  chrome.storage.sync.get([PROFILE_LIST_KEY], (result) => {
+    const profileNames = result[PROFILE_LIST_KEY] || [];
+    if (profileNames.includes(name)) {
       if (!confirm(`設定檔 "${name}" 已存在。要覆蓋它嗎？`)) return;
     }
-    profiles[name] = cookies;
-    chrome.storage.local.set({ cookieProfiles: profiles }, () => {
-      loadProfilesUI();
+
+    chrome.storage.sync.set(dataToSave, () => {
+      if (!profileNames.includes(name)) {
+        const newList = [...profileNames, name];
+        chrome.storage.sync.set({ [PROFILE_LIST_KEY]: newList }, () => {
+          loadProfilesUI();
+        });
+      }
       state.loadedProfileName = name;
       state.currentCookies = cookies;
       renderCookieList();
