@@ -150,3 +150,21 @@ export async function clearPageCookies() {
     alert('當前網頁的所有 Cookie 已被清除。');
   }
 }
+
+// CommonJS export for testing in Node.js environment
+try {
+  if (module) {
+    module.exports = {
+      handleExportSelectAll,
+      handleExportCheckboxChange,
+      exportSelectedProfiles,
+      importProfiles,
+      handleImportFile,
+      clearPageCookies,
+      PROFILE_PREFIX,
+      PROFILE_LIST_KEY
+    };
+  }
+} catch (e) {
+  // Running in browser, do nothing
+}

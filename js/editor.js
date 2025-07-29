@@ -153,3 +153,19 @@ export function deleteSingleCookie(e) {
     renderCookieList();
   }
 }
+
+// CommonJS export for testing in Node.js environment
+try {
+  if (module) {
+    module.exports = {
+      applyToPage,
+      copyCookieString,
+      saveFromString,
+      deleteSingleCookie,
+      PROFILE_PREFIX,
+      PROFILE_LIST_KEY
+    };
+  }
+} catch (e) {
+  // Running in browser, do nothing
+}

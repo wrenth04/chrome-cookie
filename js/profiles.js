@@ -134,3 +134,19 @@ export function saveEditedProfile() {
         alert(`對設定檔 "${state.loadedProfileName}" 的修改已儲存。`);
     });
 }
+
+// CommonJS export for testing in Node.js environment
+try {
+  if (module) {
+    module.exports = {
+      loadProfile,
+      deleteProfile,
+      saveProfile,
+      saveEditedProfile,
+      PROFILE_PREFIX,
+      PROFILE_LIST_KEY
+    };
+  }
+} catch (e) {
+  // Running in browser, do nothing
+}
