@@ -114,6 +114,7 @@ async function initialize() {
  */
 function setupEventListeners() {
   setupTabs();
+  dom.profileFilterInput.addEventListener('input', (e) => loadProfilesUI(e.target.value));
   dom.loadProfileButton.addEventListener('click', loadProfile);
   dom.deleteProfileButton.addEventListener('click', deleteProfile);
   dom.applyToPageButton.addEventListener('click', () => applyToPage());

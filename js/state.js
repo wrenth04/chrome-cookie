@@ -45,6 +45,7 @@ export const dom = {
   tabContents: document.querySelectorAll('.tab-content'),
   
   // --- 分頁 1: 設定檔管理 ---
+  profileFilterInput: document.getElementById('profileFilter'),
   profilesSelect: document.getElementById('profilesSelect'),
   loadProfileButton: document.getElementById('loadProfile'),
   deleteProfileButton: document.getElementById('deleteProfile'),

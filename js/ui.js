@@ -79,26 +79,31 @@ export const renderExportList = (profileNames) => {
 /**
  * 從 `chrome.storage.sync` 載入 `profile_list`，
  * 並更新設定檔管理的下拉選單和匯出工具的列表。
+ * @param {string} [filterText=''] - 用於過濾設定檔名稱的文字。
  */
-export const loadProfilesUI = () => {
+export const loadProfilesUI = (filterText = '') => {
   chrome.storage.sync.get(['profile_list'], (result) => {
     const profileNames = result.profile_list || [];
     const selectedValue = dom.profilesSelect.value;
     
+    const filteredNames = profileNames.filter(name => name.toLowerCase().includes(filterText.toLowerCase()));
+
     // 重新填充設定檔下拉選單
     dom.profilesSelect.innerHTML = '<option value="" disabled selected>選擇一個設定檔</option>';
-    for (const name of profileNames) {
+    for (const name of filteredNames) {
       const option = document.createElement('option');
       option.value = name;
       option.textContent = name;
       dom.profilesSelect.appendChild(option);
     }
-    // 如果之前有選中的值且該值仍然存在，則恢復選中狀態
-    if (selectedValue && profileNames.includes(selectedValue)) {
+    // 如果之前有選中的值且該值仍然存在於過濾後的列表中，則恢復選中狀態
+    if (selectedValue && filteredNames.includes(selectedValue)) {
       dom.profilesSelect.value = selectedValue;
+    } else {
+      dom.profilesSelect.value = "";
     }
 
-    // 重新渲染匯出列表
+    // 重新渲染匯出列表 (不過濾)
     renderExportList(profileNames);
   });
 };
