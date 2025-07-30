@@ -4,7 +4,8 @@
   "description": "這是一個專為開發者設計的 Chrome 擴充功能，核心功能是讓您能夠輕鬆建立、儲存、載入和管理多組不同的 Cookie 設定檔。在需要頻繁切換不同使用者帳號或測試不同使用者情境的網站上，這個工具可以大幅提升您的工作效率。",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rm -rf dist chrome-cookie-*.zip && mkdir -p dist && cp -r manifest.json popup.html popup.css js images _locales LICENSE README.md dist/ && cd dist && zip -r ../chrome-cookie-$npm_package_version.zip . && cd .."
   },
   "keywords": [],
   "author": "",
