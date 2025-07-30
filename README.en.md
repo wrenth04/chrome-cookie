@@ -4,6 +4,7 @@ This is a Chrome extension designed for developers, with the core function of en
 
 ## Core Features
 
+*   **Multi-language Support**: Supports English, Traditional Chinese, Simplified Chinese, Japanese, and Korean.
 *   **Cloud Sync**: Uses the `chrome.storage.sync` API to automatically sync all your profiles across different computers where you are logged into the same Chrome account.
 *   **Multi-profile Management**: Save multiple sets of cookie collections and name them for easy identification and switching.
 *   **One-click Load and Apply**: Select a profile from the popup interface to apply all cookies in that profile to the current page with a single click.
