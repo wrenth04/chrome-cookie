@@ -87,3 +87,52 @@
     - **缺點**: 同步操作會阻塞 UI、資料可能隨瀏覽紀錄被清除、只能儲存字串。應避免使用。
 - **IndexedDB**:
     - **用途**: 適合儲存需要複雜查詢的大量結構化資料。當 `chrome.storage` 不敷使用時可考慮。
+
+---
+
+## 四、國際化 (i18n)
+
+為了讓擴充功能觸及全球使用者，國際化 (Internationalization) 是關鍵。
+
+### 1. `manifest.json` 與檔案結構
+- **`_locales` 資料夾**: 在根目錄建立此資料夾，並為每種語言建立子資料夾 (例如 `en`, `zh_TW`)。
+- **`messages.json`**: 在每個語言子資料夾中建立此檔案，用來存放翻譯字串。
+- **`"default_locale"`**: 在 `manifest.json` 中設定預設語言。
+- **`__MSG_messagename__`**: 在 `manifest.json` 和 CSS 檔案中使用此格式來引用翻譯字串。
+
+### 2. `chrome.i18n` API
+- **`chrome.i18n.getMessage(messageName, substitutions)`**: 在 JavaScript 中取得翻譯字串。
+- **預定義訊息**: 使用 `@@ui_locale` 等訊息來取得當前環境資訊。
+
+### 3. HTML 國際化
+- 建議使用 JavaScript 掃描並替換帶有 `data-i18n` 等特定屬性的 HTML 元素內容。
+
+---
+
+## 五、自動化測試
+
+自動化測試是確保擴充功能品質與可靠性的重要環節。
+
+### 1. 端對端 (End-to-End) 測試
+- **目的**: 模擬真實使用者情境，驗證完整功能流程。
+- **工具**:
+    - **Puppeteer**: Google 開發的 Node.js 函式庫，可控制 Chrome/Chromium。
+    - **Playwright**: Microsoft 開發的類似工具，支援多種瀏覽器。
+    - **Selenium**: 老牌的瀏覽器自動化框架。
+
+### 2. 單元測試 (Unit Testing)
+- **目的**: 獨立測試擴充功能中的個別函式或元件。
+- **框架**:
+    - **Jest**: 功能強大的 JavaScript 測試框架。
+    - **Mocha**: 靈活的測試框架。
+- **關鍵**: 需要 **模擬 (Mocking)** `chrome.*` 等擴充功能特有的 API。
+
+### 3. 其他重要測試
+- **UI / 視覺回歸測試**: 確保 UI 介面的一致性與預期相符。
+- **效能測試**: 確保擴充功能不會過度影響瀏覽器效能。
+- **無障礙 (Accessibility) 測試**: 確保所有使用者都能順利操作。
+
+### 4. 最佳實踐
+- **整合測試策略**: 結合單元測試、E2E 測試等多種方法。
+- **持續整合 (CI)**: 使用 GitHub Actions 等工具自動化測試流程。
+- **跨環境測試**: 在不同作業系統與瀏覽器版本上進行測試。
