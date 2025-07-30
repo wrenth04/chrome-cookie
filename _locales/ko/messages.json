@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "쿠키 관리"
+  },
+  "extensionDescription": {
+    "message": "여러 쿠키 프로필을 쉽게 관리, 저장 및 전환할 수 있습니다."
+  },
+  "profilesTab": {
+    "message": "프로필"
+  },
+  "editorTab": {
+    "message": "에디터"
+  },
+  "toolsTab": {
+    "message": "도구"
+  },
+  "profilesTitle": {
+    "message": "프로필 관리"
+  },
+  "filterProfilesPlaceholder": {
+    "message": "프로필 필터링..."
+  },
+  "loadProfileButton": {
+    "message": "프로필 로드 및 적용"
+  },
+  "deleteProfileButton": {
+    "message": "선택한 프로필 삭제"
+  },
+  "saveChangesPrompt": {
+    "message": "현재 프로필에 대한 변경 사항을 저장하려면 '에디터' 탭으로 이동하십시오."
+  },
+  "editorTitle": {
+    "message": "편집 및 생성"
+  },
+  "currentProfileLabel": {
+    "message": "현재 편집 중인 프로필:"
+  },
+  "noProfileLoaded": {
+    "message": "없음"
+  },
+  "applyToPageButton": {
+    "message": "위 목록을 페이지에 적용"
+  },
+  "saveEditedProfileButton": {
+    "message": "현재 프로필에 대한 변경 사항 저장"
+  },
+  "copyFromListLabel": {
+    "message": "현재 목록에서 복사"
+  },
+  "copyCookieStringPlaceholder": {
+    "message": "복사 가능한 쿠키 문자열이 여기에 표시됩니다..."
+  },
+  "copyCookieStringButton": {
+    "message": "문자열 복사"
+  },
+  "createNewProfileLabel": {
+    "message": "새 프로필 생성"
+  },
+  "newProfileNamePlaceholder": {
+    "message": "새 프로필 이름"
+  },
+  "saveProfileButton": {
+    "message": "현재 목록을 새 프로필로 저장"
+  },
+  "createFromStringLabel": {
+    "message": "문자열에서 빠른 생성"
+  },
+  "newProfileNamePlaceholder2": {
+    "message": "새 프로필 이름"
+  },
+  "pasteCookieStringPlaceholder": {
+    "message": "여기에 쿠키 문자열을 붙여넣으세요 (예: name1=value1; name2=value2)"
+  },
+  "saveFromStringButton": {
+    "message": "문자열에서 새 프로필로 저장"
+  },
+  "toolsTitle": {
+    "message": "도구"
+  },
+  "exportProfilesLabel": {
+    "message": "프로필 내보내기"
+  },
+  "selectAllLabel": {
+    "message": "모두 선택/선택 해제"
+  },
+  "exportSelectedProfilesButton": {
+    "message": "선택한 프로필 내보내기"
+  },
+  "importProfilesLabel": {
+    "message": "프로필 가져오기"
+  },
+  "importFromFileButton": {
+    "message": "파일에서 가져오기"
+  },
+  "otherToolsLabel": {
+    "message": "기타"
+  },
+  "clearPageCookiesButton": {
+    "message": "현재 페이지 쿠키 지우기"
+  }
+}

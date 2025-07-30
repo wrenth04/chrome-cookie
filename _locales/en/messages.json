@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "Cookie Management"
+  },
+  "extensionDescription": {
+    "message": "Easily manage, save, and switch between multiple cookie profiles."
+  },
+  "profilesTab": {
+    "message": "Profiles"
+  },
+  "editorTab": {
+    "message": "Editor"
+  },
+  "toolsTab": {
+    "message": "Tools"
+  },
+  "profilesTitle": {
+    "message": "Profile Management"
+  },
+  "filterProfilesPlaceholder": {
+    "message": "Filter profiles..."
+  },
+  "loadProfileButton": {
+    "message": "Load and Apply Profile"
+  },
+  "deleteProfileButton": {
+    "message": "Delete Selected Profile"
+  },
+  "saveChangesPrompt": {
+    "message": "To save changes to the current profile, go to the 'Editor' tab."
+  },
+  "editorTitle": {
+    "message": "Edit and Create"
+  },
+  "currentProfileLabel": {
+    "message": "Currently editing profile:"
+  },
+  "noProfileLoaded": {
+    "message": "None"
+  },
+  "applyToPageButton": {
+    "message": "Apply Above List to Page"
+  },
+  "saveEditedProfileButton": {
+    "message": "Save Changes to Current Profile"
+  },
+  "copyFromListLabel": {
+    "message": "Copy from Current List"
+  },
+  "copyCookieStringPlaceholder": {
+    "message": "Copyable cookie string will appear here..."
+  },
+  "copyCookieStringButton": {
+    "message": "Copy String"
+  },
+  "createNewProfileLabel": {
+    "message": "Create New Profile"
+  },
+  "newProfileNamePlaceholder": {
+    "message": "New profile name"
+  },
+  "saveProfileButton": {
+    "message": "Save Current List as New Profile"
+  },
+  "createFromStringLabel": {
+    "message": "Quick Create from String"
+  },
+  "newProfileNamePlaceholder2": {
+    "message": "New profile name"
+  },
+  "pasteCookieStringPlaceholder": {
+    "message": "Paste cookie string here (e.g., name1=value1; name2=value2)"
+  },
+  "saveFromStringButton": {
+    "message": "Save as New Profile from String"
+  },
+  "toolsTitle": {
+    "message": "Tools"
+  },
+  "exportProfilesLabel": {
+    "message": "Export Profiles"
+  },
+  "selectAllLabel": {
+    "message": "Select/Deselect All"
+  },
+  "exportSelectedProfilesButton": {
+    "message": "Export Selected Profiles"
+  },
+  "importProfilesLabel": {
+    "message": "Import Profiles"
+  },
+  "importFromFileButton": {
+    "message": "Import from File"
+  },
+  "otherToolsLabel": {
+    "message": "Other"
+  },
+  "clearPageCookiesButton": {
+    "message": "Clear Current Page Cookies"
+  }
+}

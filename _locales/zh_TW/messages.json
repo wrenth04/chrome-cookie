@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "Cookie 管理"
+  },
+  "extensionDescription": {
+    "message": "輕鬆管理、儲存和切換多組 Cookie 設定檔。"
+  },
+  "profilesTab": {
+    "message": "設定檔"
+  },
+  "editorTab": {
+    "message": "編輯器"
+  },
+  "toolsTab": {
+    "message": "工具"
+  },
+  "profilesTitle": {
+    "message": "設定檔管理"
+  },
+  "filterProfilesPlaceholder": {
+    "message": "篩選設定檔..."
+  },
+  "loadProfileButton": {
+    "message": "載入並套用設定檔"
+  },
+  "deleteProfileButton": {
+    "message": "刪除所選設定檔"
+  },
+  "saveChangesPrompt": {
+    "message": "若要儲存對目前設定檔的變更，請前往「編輯器」分頁。"
+  },
+  "editorTitle": {
+    "message": "編輯與建立"
+  },
+  "currentProfileLabel": {
+    "message": "目前編輯的設定檔："
+  },
+  "noProfileLoaded": {
+    "message": "無"
+  },
+  "applyToPageButton": {
+    "message": "將上方列表套用至頁面"
+  },
+  "saveEditedProfileButton": {
+    "message": "儲存對目前設定檔的變更"
+  },
+  "copyFromListLabel": {
+    "message": "從目前列表複製"
+  },
+  "copyCookieStringPlaceholder": {
+    "message": "可複製的 Cookie 字串將顯示在此處..."
+  },
+  "copyCookieStringButton": {
+    "message": "複製字串"
+  },
+  "createNewProfileLabel": {
+    "message": "建立新設定檔"
+  },
+  "newProfileNamePlaceholder": {
+    "message": "新設定檔名稱"
+  },
+  "saveProfileButton": {
+    "message": "將目前列表儲存為新設定檔"
+  },
+  "createFromStringLabel": {
+    "message": "從字串快速建立"
+  },
+  "newProfileNamePlaceholder2": {
+    "message": "新設定檔名稱"
+  },
+  "pasteCookieStringPlaceholder": {
+    "message": "在此貼上 Cookie 字串 (例如：name1=value1; name2=value2)"
+  },
+  "saveFromStringButton": {
+    "message": "從字串儲存為新設定檔"
+  },
+  "toolsTitle": {
+    "message": "工具"
+  },
+  "exportProfilesLabel": {
+    "message": "匯出設定檔"
+  },
+  "selectAllLabel": {
+    "message": "全選/取消全選"
+  },
+  "exportSelectedProfilesButton": {
+    "message": "匯出所選設定檔"
+  },
+  "importProfilesLabel": {
+    "message": "匯入設定檔"
+  },
+  "importFromFileButton": {
+    "message": "從檔案匯入"
+  },
+  "otherToolsLabel": {
+    "message": "其他"
+  },
+  "clearPageCookiesButton": {
+    "message": "清除目前頁面的 Cookie"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "Cookie 管理"
+  },
+  "extensionDescription": {
+    "message": "轻松管理、保存和切换多个 Cookie 配置文件。"
+  },
+  "profilesTab": {
+    "message": "配置文件"
+  },
+  "editorTab": {
+    "message": "编辑器"
+  },
+  "toolsTab": {
+    "message": "工具"
+  },
+  "profilesTitle": {
+    "message": "配置文件管理"
+  },
+  "filterProfilesPlaceholder": {
+    "message": "筛选配置文件..."
+  },
+  "loadProfileButton": {
+    "message": "加载并应用配置文件"
+  },
+  "deleteProfileButton": {
+    "message": "删除所选配置文件"
+  },
+  "saveChangesPrompt": {
+    "message": "要保存对当前配置文件的更改，请转到“编辑器”选项卡。"
+  },
+  "editorTitle": {
+    "message": "编辑与创建"
+  },
+  "currentProfileLabel": {
+    "message": "当前编辑的配置文件："
+  },
+  "noProfileLoaded": {
+    "message": "无"
+  },
+  "applyToPageButton": {
+    "message": "将上方列表应用到页面"
+  },
+  "saveEditedProfileButton": {
+    "message": "保存对当前配置文件的更改"
+  },
+  "copyFromListLabel": {
+    "message": "从当前列表复制"
+  },
+  "copyCookieStringPlaceholder": {
+    "message": "可复制的 Cookie 字符串将显示在此处..."
+  },
+  "copyCookieStringButton": {
+    "message": "复制字符串"
+  },
+  "createNewProfileLabel": {
+    "message": "创建新配置文件"
+  },
+  "newProfileNamePlaceholder": {
+    "message": "新配置文件名称"
+  },
+  "saveProfileButton": {
+    "message": "将当前列表另存为新配置文件"
+  },
+  "createFromStringLabel": {
+    "message": "从字符串快速创建"
+  },
+  "newProfileNamePlaceholder2": {
+    "message": "新配置文件名称"
+  },
+  "pasteCookieStringPlaceholder": {
+    "message": "在此处粘贴 Cookie 字符串（例如：name1=value1; name2=value2）"
+  },
+  "saveFromStringButton": {
+    "message": "从字符串另存为新配置文件"
+  },
+  "toolsTitle": {
+    "message": "工具"
+  },
+  "exportProfilesLabel": {
+    "message": "导出配置文件"
+  },
+  "selectAllLabel": {
+    "message": "全选/取消全选"
+  },
+  "exportSelectedProfilesButton": {
+    "message": "导出所选配置文件"
+  },
+  "importProfilesLabel": {
+    "message": "导入配置文件"
+  },
+  "importFromFileButton": {
+    "message": "从文件导入"
+  },
+  "otherToolsLabel": {
+    "message": "其他"
+  },
+  "clearPageCookiesButton": {
+    "message": "清除当前页面的 Cookie"
+  }
+}

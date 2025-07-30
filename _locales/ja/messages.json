@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "クッキー管理"
+  },
+  "extensionDescription": {
+    "message": "複数のクッキープロファイルを簡単に管理、保存、切り替えできます。"
+  },
+  "profilesTab": {
+    "message": "プロファイル"
+  },
+  "editorTab": {
+    "message": "エディタ"
+  },
+  "toolsTab": {
+    "message": "ツール"
+  },
+  "profilesTitle": {
+    "message": "プロファイル管理"
+  },
+  "filterProfilesPlaceholder": {
+    "message": "プロファイルをフィルタリング..."
+  },
+  "loadProfileButton": {
+    "message": "プロファイルを読み込んで適用"
+  },
+  "deleteProfileButton": {
+    "message": "選択したプロファイルを削除"
+  },
+  "saveChangesPrompt": {
+    "message": "現在のプロファイルへの変更を保存するには、「エディタ」タブに移動してください。"
+  },
+  "editorTitle": {
+    "message": "編集と作成"
+  },
+  "currentProfileLabel": {
+    "message": "現在編集中のプロファイル："
+  },
+  "noProfileLoaded": {
+    "message": "なし"
+  },
+  "applyToPageButton": {
+    "message": "上記のリストをページに適用"
+  },
+  "saveEditedProfileButton": {
+    "message": "現在のプロファイルへの変更を保存"
+  },
+  "copyFromListLabel": {
+    "message": "現在のリストからコピー"
+  },
+  "copyCookieStringPlaceholder": {
+    "message": "コピー可能なクッキー文字列がここに表示されます..."
+  },
+  "copyCookieStringButton": {
+    "message": "文字列をコピー"
+  },
+  "createNewProfileLabel": {
+    "message": "新しいプロファイルを作成"
+  },
+  "newProfileNamePlaceholder": {
+    "message": "新しいプロファイル名"
+  },
+  "saveProfileButton": {
+    "message": "現在のリストを新しいプロファイルとして保存"
+  },
+  "createFromStringLabel": {
+    "message": "文字列からクイック作成"
+  },
+  "newProfileNamePlaceholder2": {
+    "message": "新しいプロファイル名"
+  },
+  "pasteCookieStringPlaceholder": {
+    "message": "ここにクッキー文字列を貼り付けます（例：name1=value1; name2=value2）"
+  },
+  "saveFromStringButton": {
+    "message": "文字列から新しいプロファイルとして保存"
+  },
+  "toolsTitle": {
+    "message": "ツール"
+  },
+  "exportProfilesLabel": {
+    "message": "プロファイルをエクスポート"
+  },
+  "selectAllLabel": {
+    "message": "すべて選択/選択解除"
+  },
+  "exportSelectedProfilesButton": {
+    "message": "選択したプロファイルをエクスポート"
+  },
+  "importProfilesLabel": {
+    "message": "プロファイルをインポート"
+  },
+  "importFromFileButton": {
+    "message": "ファイルからインポート"
+  },
+  "otherToolsLabel": {
+    "message": "その他"
+  },
+  "clearPageCookiesButton": {
+    "message": "現在のページのクッキーをクリア"
+  }
+}

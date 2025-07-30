@@ -19,6 +19,38 @@ import { handleExportSelectAll, handleExportCheckboxChange, exportSelectedProfil
 const PROFILE_PREFIX = 'profile_';
 const PROFILE_LIST_KEY = 'profile_list';
 
+// --- i18n ---
+
+/**
+ * 應用國際化 (i18n) 到 DOM 元素。
+ * 它會尋找帶有 `data-i18n` 和 `data-i18n-placeholder` 屬性的元素，
+ * 並用 `chrome.i18n.getMessage` API 取得的翻譯字串替換其內容。
+ */
+function applyI18n() {
+  // 翻譯元素的文字內容
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const messageKey = element.getAttribute('data-i18n');
+    if (messageKey) {
+      const message = chrome.i18n.getMessage(messageKey);
+      if (message) {
+        element.textContent = message;
+      }
+    }
+  });
+
+  // 翻譯 input 和 textarea 的 placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const messageKey = element.getAttribute('data-i18n-placeholder');
+    if (messageKey) {
+      const message = chrome.i18n.getMessage(messageKey);
+      if (message) {
+        element.placeholder = message;
+      }
+    }
+  });
+}
+
+
 // --- 初始化 ---
 
 /**
@@ -135,6 +167,7 @@ function setupEventListeners() {
 // --- 啟動 ---
 
 document.addEventListener('DOMContentLoaded', () => {
+  applyI18n();
   initialize();
   setupEventListeners();
 });

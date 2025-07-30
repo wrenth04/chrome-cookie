@@ -2,69 +2,69 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Cookie 管理</title>
+  <title data-i18n="extensionName"></title>
   <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
   <div class="container">
-    <h1>Cookie 管理</h1>
+    <h1 data-i18n="extensionName"></h1>
     
     <div class="tab-nav">
-      <button class="tab-link active" data-tab="profiles">設定檔管理</button>
-      <button class="tab-link" data-tab="editor">編輯與建立</button>
-      <button class="tab-link" data-tab="tools">工具</button>
+      <button class="tab-link active" data-tab="profiles" data-i18n="profilesTab"></button>
+      <button class="tab-link" data-tab="editor" data-i18n="editorTab"></button>
+      <button class="tab-link" data-tab="tools" data-i18n="toolsTab"></button>
     </div>
 
     <!-- Tab Content -->
     <div id="profiles" class="tab-content active">
-      <h2>設定檔管理</h2>
-      <input type="text" id="profileFilter" placeholder="過濾設定檔...">
+      <h2 data-i18n="profilesTitle"></h2>
+      <input type="text" id="profileFilter" data-i18n-placeholder="filterProfilesPlaceholder">
       <select id="profilesSelect"></select>
-      <button id="loadProfile">載入設定檔並套用</button>
-      <button id="deleteProfile">刪除所選設定檔</button>
+      <button id="loadProfile" data-i18n="loadProfileButton"></button>
+      <button id="deleteProfile" data-i18n="deleteProfileButton"></button>
       <hr>
-      <p><em>若要儲存對目前設定檔的修改，請至「編輯與建立」分頁。</em></p>
+      <p><em data-i18n="saveChangesPrompt"></em></p>
     </div>
 
     <div id="editor" class="tab-content">
-      <h2>編輯與建立</h2>
-      <p>目前編輯的設定檔：<strong id="loadedProfileNameDisplay">無</strong></p>
+      <h2 data-i18n="editorTitle"></h2>
+      <p><span data-i18n="currentProfileLabel"></span> <strong id="loadedProfileNameDisplay" data-i18n="noProfileLoaded"></strong></p>
       <div id="cookie-list"></div>
-      <button id="applyToPage" class="apply-button">將上方列表套用至網頁</button>
-      <button id="saveEditedProfile">儲存對目前設定檔的修改</button>
+      <button id="applyToPage" class="apply-button" data-i18n="applyToPageButton"></button>
+      <button id="saveEditedProfile" data-i18n="saveEditedProfileButton"></button>
       <hr>
-      <h4>從目前列表複製</h4>
-      <textarea id="copyCookieStringTextarea" readonly placeholder="此處會顯示可複製的 Cookie 字串..."></textarea>
-      <button id="copyCookieStringButton">複製字串</button>
+      <h4 data-i18n="copyFromListLabel"></h4>
+      <textarea id="copyCookieStringTextarea" readonly data-i18n-placeholder="copyCookieStringPlaceholder"></textarea>
+      <button id="copyCookieStringButton" data-i18n="copyCookieStringButton"></button>
       <hr>
-      <h3>建立新設定檔</h3>
-      <input type="text" id="profileName" placeholder="新設定檔名稱">
-      <button id="saveProfile">儲存目前列表為新設定檔</button>
+      <h3 data-i18n="createNewProfileLabel"></h3>
+      <input type="text" id="profileName" data-i18n-placeholder="newProfileNamePlaceholder">
+      <button id="saveProfile" data-i18n="saveProfileButton"></button>
       <hr>
-      <h3>從字串快速建立</h3>
-      <input type="text" id="newProfileName" placeholder="新設定檔名稱">
-      <textarea id="cookieString" placeholder="在此貼上 Cookie 字串 (例如 name1=value1; name2=value2)"></textarea>
-      <button id="saveFromString">從字串儲存為新設定檔</button>
+      <h3 data-i18n="createFromStringLabel"></h3>
+      <input type="text" id="newProfileName" data-i18n-placeholder="newProfileNamePlaceholder2">
+      <textarea id="cookieString" data-i18n-placeholder="pasteCookieStringPlaceholder"></textarea>
+      <button id="saveFromString" data-i18n="saveFromStringButton"></button>
     </div>
 
     <div id="tools" class="tab-content">
-      <h2>工具</h2>
-      <h3>匯出設定檔</h3>
+      <h2 data-i18n="toolsTitle"></h2>
+      <h3><span data-i18n="exportProfilesLabel"></span></h3>
       <div class="checkbox-container" id="exportSelectAllContainer">
         <input type="checkbox" id="exportSelectAll">
-        <label for="exportSelectAll"><strong>全選/取消全選</strong></label>
+        <label for="exportSelectAll"><strong data-i18n="selectAllLabel"></strong></label>
       </div>
       <div id="exportProfilesList">
         <!-- Profile checkboxes will be inserted here by popup.js -->
       </div>
-      <button id="exportSelectedProfilesButton">匯出所選設定檔</button>
+      <button id="exportSelectedProfilesButton" data-i18n="exportSelectedProfilesButton"></button>
       <hr>
-      <h3>匯入設定檔</h3>
-      <button id="importProfiles">從檔案匯入</button>
+      <h3><span data-i18n="importProfilesLabel"></span></h3>
+      <button id="importProfiles" data-i18n="importFromFileButton"></button>
       <input type="file" id="importFile" accept=".json" style="display: none;">
       <hr>
-      <h3>其他</h3>
-      <button id="clearPageCookies">一鍵清除當前網頁 Cookie</button>
+      <h3><span data-i18n="otherToolsLabel"></span></h3>
+      <button id="clearPageCookies" data-i18n="clearPageCookiesButton"></button>
     </div>
   </div>
 
